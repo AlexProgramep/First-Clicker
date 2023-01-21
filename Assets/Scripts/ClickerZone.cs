@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+
+public class ClickerZone : MonoBehaviour, IPointerClickHandler
+{
+    public event UnityAction Click;
+    public AudioSource sound;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Click.Invoke();
+        sound.Play();
+    }
+}
